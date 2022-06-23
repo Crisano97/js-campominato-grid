@@ -10,49 +10,42 @@ playButton.addEventListener ('click', function(){
     
     
     mainContainer.innerHTML = "";
-    let newElementDiv = document.createElement('div');
-    newElementDiv.classList.add('box-container', 'd-flex')
+    
+    let newElementDiv = createNewBox('box-container', 'd-flex');
 
     mainContainer.append(newElementDiv);
 
     let selectValue = difficultySelect.value;
 
     let boxNumber = 100;
-    let style = 'box-l';
+    let boxStyle = 'box-l';
 
     if (selectValue == 2) {
         boxNumber = 81;
-        style = 'box-m';
+        boxStyle = 'box-m';
 
     } else if (selectValue == 3) {
         boxNumber = 49;
-        style = 'box-s';
+        boxStyle = 'box-s';
 
     }
 
-    drawGrid(boxNumber,style);
+    numberOfBoxGenerator(boxNumber,boxStyle);
 
 });
 
-function createNewBox(boxStyle){
+function createNewBox(style){
     const currentBox = document.createElement('div');
-    currentBox.classList.add(boxStyle);
+    currentBox.classList.add(style);
     return currentBox;
 }
 
-function addEventListenerToggle (htmlElement, classToToggle) {
-        htmlElement.addEventListener('click', function() {
-        htmlElement.classList.toggle(classToToggle);
-        console.log('hai cliccato' + "" + htmlElement.innerHTML)
-        
-    });
-}
 
-function drawGrid (count, style){
+function numberOfBoxGenerator (count, boxStyle){
 
     const boxContainer = document.querySelector('.box-container');
     for (let i = 1; i <= count; i++) {
-        const newBox = createNewBox(style);
+        const newBox = createNewBox(boxStyle);
         newBox.innerHTML = i;
 
         addEventListenerToggle(newBox, 'azure');
@@ -60,6 +53,15 @@ function drawGrid (count, style){
         boxContainer.append(newBox);
 
     }
+}
+
+
+function addEventListenerToggle (htmlElement, classToToggle) {
+        htmlElement.addEventListener('click', function() {
+        htmlElement.classList.toggle(classToToggle);
+        console.log('hai cliccato' + "" + htmlElement.innerHTML)
+        
+    });
 }
 
 
