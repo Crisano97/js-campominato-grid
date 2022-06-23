@@ -1,5 +1,15 @@
-//mi seleziono l'elemento del DOM;
-const boxContainer = document.getElementById('box-wrapper');
+
+const playButton = document.getElementById('play-btn');
+
+playButton.addEventListener ('click', function(){
+    const mainContainer = document.getElementById('main-container');
+    let newElementDiv = document.createElement('div');
+    newElementDiv.classList.add('box-container', 'd-flex')
+
+    mainContainer.append(newElementDiv);
+
+    //mi seleziono l'elemento del DOM;
+const boxContainer = document.querySelector('.box-container');
 
 //all'interno dell'elemento selezionato vado a inserire i miei elementi;
 
@@ -13,8 +23,7 @@ for (let i = 1; i <= 100; i++) {
 
 }
 
-
-
+})
 
 //mi creo una funzione per creare gli elementi che mi servono;
 function createNewBox(){

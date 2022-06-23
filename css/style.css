@@ -9,10 +9,24 @@ body {
 }
 
 
+main {
+    padding: 5vh;
+    width: 100%;
+    height: 80vh;
+}
+
+header, footer {
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    text-align: center;
+}
+
+
 .box-container {
     width: 599px;
     height: 600px;
-    margin: 150px auto;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -34,3 +48,4 @@ body {
 .box.azure {
     background-color: azure;
 }
+
