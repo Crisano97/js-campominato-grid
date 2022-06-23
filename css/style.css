@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-container {
+    width: 599px;
+    height: 600px;
+    margin: 150px auto;
+
+}
+
+.box {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.box-container, .box {
+    border: 2px solid white;
+}
