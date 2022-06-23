@@ -31,9 +31,26 @@ header, footer {
     flex-wrap: wrap;
 }
 
-.box {
+.box-s {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    
+}
+
+.box-m {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    
+}
+
+.box-l {
     width: calc(100% / 10);
     height: calc(100% / 10);
+    
+}
+
+ .box-s, .box-m, .box-l {
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,11 +58,7 @@ header, footer {
     cursor: pointer;
 }
 
- .box {
-    border: 2px solid white;
-}
-
-.box.azure {
+.azure {
     background-color: azure;
 }
 

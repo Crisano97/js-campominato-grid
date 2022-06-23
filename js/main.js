@@ -4,43 +4,62 @@ const playButton = document.getElementById('play-btn');
 const mainContainer = document.getElementById('main-container');
 
 
+const difficultySelect = document.getElementById('game-level');
+
 playButton.addEventListener ('click', function(){
+    
+    
     mainContainer.innerHTML = "";
     let newElementDiv = document.createElement('div');
     newElementDiv.classList.add('box-container', 'd-flex')
 
     mainContainer.append(newElementDiv);
 
-    //mi seleziono l'elemento del DOM;
-const boxContainer = document.querySelector('.box-container');
+    let selectValue = difficultySelect.value;
 
-//all'interno dell'elemento selezionato vado a inserire i miei elementi;
+    let boxNumber = 100;
+    let style = 'box-l';
 
-    for (let i = 1; i <= 100; i++) {
-        const newBox = createNewBox();
+    if (selectValue == 2) {
+        boxNumber = 81;
+        style = 'box-m';
+
+    } else if (selectValue == 3) {
+        boxNumber = 49;
+        style = 'box-s';
+
+    }
+
+    drawGrid(boxNumber,style);
+
+});
+
+function createNewBox(boxStyle){
+    const currentBox = document.createElement('div');
+    currentBox.classList.add(boxStyle);
+    return currentBox;
+}
+
+function addEventListenerToggle (htmlElement, classToToggle) {
+        htmlElement.addEventListener('click', function() {
+        htmlElement.classList.toggle(classToToggle);
+        console.log('hai cliccato' + "" + htmlElement.innerHTML)
+        
+    });
+}
+
+function drawGrid (count, style){
+
+    const boxContainer = document.querySelector('.box-container');
+    for (let i = 1; i <= count; i++) {
+        const newBox = createNewBox(style);
         newBox.innerHTML = i;
 
-        let addedClassName = addEventListenerToggle(newBox, 'azure');
+        addEventListenerToggle(newBox, 'azure');
 
         boxContainer.append(newBox);
 
     }
-
-})
-
-//mi creo una funzione per creare gli elementi che mi servono;
-function createNewBox(){
-    const currentBox = document.createElement('div');
-    currentBox.classList.add('box');
-    return currentBox;
 }
 
-//mi creo una funzione che mi aggiunga che al click del mio elemento questo si colori;
-function addEventListenerToggle (htmlElement, classToToggle) {
-    htmlElement.addEventListener('click', function() {
-        htmlElement.classList.toggle(classToToggle);
-    console.log('hai cliccato' + "" + htmlElement.innerHTML)
-        
-    });
-}
 
