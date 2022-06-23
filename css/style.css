@@ -24,7 +24,7 @@ header, footer {
 
 
 .box-container {
-    width: 599px;
+    width: 600px;
     height: 600px;
     margin: 20px auto;
     display: flex;
@@ -41,7 +41,7 @@ header, footer {
     cursor: pointer;
 }
 
-.box-container, .box {
+ .box {
     border: 2px solid white;
 }
 

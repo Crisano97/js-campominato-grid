@@ -1,8 +1,11 @@
 
 const playButton = document.getElementById('play-btn');
 
+const mainContainer = document.getElementById('main-container');
+
+
 playButton.addEventListener ('click', function(){
-    const mainContainer = document.getElementById('main-container');
+    mainContainer.innerHTML = "";
     let newElementDiv = document.createElement('div');
     newElementDiv.classList.add('box-container', 'd-flex')
 
@@ -13,15 +16,15 @@ const boxContainer = document.querySelector('.box-container');
 
 //all'interno dell'elemento selezionato vado a inserire i miei elementi;
 
-for (let i = 1; i <= 100; i++) {
-    const newBox = createNewBox();
-    newBox.innerHTML = i;
+    for (let i = 1; i <= 100; i++) {
+        const newBox = createNewBox();
+        newBox.innerHTML = i;
 
-    let addedClassName = addEventListenerToggle(newBox, 'azure');
+        let addedClassName = addEventListenerToggle(newBox, 'azure');
 
-    boxContainer.append(newBox);
+        boxContainer.append(newBox);
 
-}
+    }
 
 })
 
@@ -40,3 +43,4 @@ function addEventListenerToggle (htmlElement, classToToggle) {
         
     });
 }
+
