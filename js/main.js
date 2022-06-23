@@ -1,11 +1,14 @@
 //mi seleziono l'elemento del DOM;
 const boxContainer = document.getElementById('box-wrapper');
-console.log(boxContainer)
 
 //all'interno dell'elemento selezionato vado a inserire i miei elementi;
 
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i <= 100; i++) {
     const newBox = createNewBox();
+    newBox.innerHTML = i;
+
+    let addedClassName = addEventListenerToggle(newBox, 'azure');
+
     boxContainer.append(newBox);
 
 }
@@ -18,4 +21,13 @@ function createNewBox(){
     const currentBox = document.createElement('div');
     currentBox.classList.add('box');
     return currentBox;
+}
+
+//mi creo una funzione che mi aggiunga che al click del mio elemento questo si colori;
+function addEventListenerToggle (htmlElement, classToToggle) {
+    htmlElement.addEventListener('click', function() {
+        htmlElement.classList.toggle(classToToggle);
+    console.log('hai cliccato' + "" + htmlElement.innerHTML)
+        
+    });
 }

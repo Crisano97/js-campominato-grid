@@ -8,23 +8,29 @@ body {
     background-color: black;
 }
 
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .box-container {
     width: 599px;
     height: 600px;
     margin: 150px auto;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .box {
     width: calc(100% / 10);
     height: calc(100% / 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .box-container, .box {
     border: 2px solid white;
+}
+
+.box.azure {
+    background-color: azure;
 }
